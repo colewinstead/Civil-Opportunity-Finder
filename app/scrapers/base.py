@@ -21,6 +21,10 @@ class ScraperError(RuntimeError):
     """Visible source failure; collection continues with other sources."""
 
 
+class SourceAccessError(ScraperError):
+    """Access rejection or exhausted throttling: stop requesting this source."""
+
+
 class PoliteHTTPClient:
     """Checks robots before each target/redirect, rate limits hosts, and retries."""
     def __init__(self, settings: Settings, transport: httpx.BaseTransport | None = None):
@@ -55,18 +59,20 @@ class PoliteHTTPClient:
             raise ScraperError("Server requested a long retry delay; defer this source to a later run")
         return delay
 
-    def _request(self, url: str, minimum: float = 0) -> httpx.Response:
+    def _request(self, url: str, minimum: float = 0, method: str = "GET", data: dict[str, str] | None = None) -> httpx.Response:
         for attempt in range(self.settings.scraper_retries + 1):
             self._delay(url, minimum)
             response = None
             try:
-                response = self.client.get(url, follow_redirects=False)
+                response = self.client.request(method, url, data=data, follow_redirects=False)
                 if response.status_code != 429 and response.status_code < 500:
                     return response
                 error = f"HTTP {response.status_code}"
             except httpx.TransportError as exc:
                 error = str(exc)
             if attempt == self.settings.scraper_retries:
+                if response is not None and response.status_code == 429:
+                    raise SourceAccessError(f"HTTP 429 fetching {url}; defer collection")
                 raise ScraperError(f"Request failed for {url}: {error}")
             delay = self._retry_delay(response, attempt)
             logger.warning("Retrying source request", extra={"fields": {"url": url, "attempt": attempt + 1, "delay": delay, "error": error}})
@@ -99,6 +105,13 @@ class PoliteHTTPClient:
         return self.robots[origin]
 
     def get(self, url: str) -> str:
+        return self._fetch(url)
+
+    def post_form(self, url: str, data: dict[str, str]) -> str:
+        """Read a public form-backed listing with the same access protections as GET."""
+        return self._fetch(url, "POST", data)
+
+    def _fetch(self, url: str, method: str = "GET", data: dict[str, str] | None = None) -> str:
         url = canonical_url(url)
         for _ in range(6):
             policy = self._robots(url)
@@ -109,13 +122,23 @@ class PoliteHTTPClient:
             rate = policy.request_rate(agent) or policy.request_rate("*")
             if rate and rate.requests:
                 delay = max(delay, rate.seconds / rate.requests)
-            response = self._request(url, delay)
+            response = self._request(url, delay, method, data)
             if response.is_redirect:
-                url = canonical_url(response.headers.get("location"), url)
-                if not url:
+                target = canonical_url(response.headers.get("location"), url)
+                if not target:
                     raise ScraperError("Redirect has no destination")
+                if method == "POST":
+                    if urlsplit(target)[:2] != urlsplit(url)[:2]:
+                        raise ScraperError("Refusing to forward a form across origins")
+                    if response.status_code == 303:
+                        method, data = "GET", None
+                    elif response.status_code not in (307, 308):
+                        raise ScraperError("Ambiguous redirect for a form request")
+                url = target
                 continue
             try:
+                if response.status_code in (401, 403):
+                    raise SourceAccessError(f"HTTP {response.status_code} fetching {url}; access denied")
                 response.raise_for_status()
             except httpx.HTTPStatusError as exc:
                 raise ScraperError(f"HTTP {response.status_code} fetching {url}") from exc
@@ -135,6 +158,8 @@ class BaseScraper(ABC):
     def __init__(self, settings: Settings, http: PoliteHTTPClient | None = None):
         self.settings = settings
         self.http = http
+        self.metrics: dict[str, int] = {}
+        self.record_errors: list[str] = []
 
     def fetch(self) -> str:
         if self.http is None:

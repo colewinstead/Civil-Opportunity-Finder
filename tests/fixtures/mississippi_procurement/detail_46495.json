@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact Lynnetta Cooksey, lcooksey@ecpdd.org",
+  "AdvertiseDate": "/Date(1789448400000)/",
+  "AdvertiseTime": "17:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67862,
+      "Description": "City of Carthage Advertisement for Bid.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/24%2D20260827081551%20CARTHAGE.PDF?PHIOGET&KPID=0200060000111FD1ACA85020AB0031DC&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Separate sealed Bids will be received by the City of Carthage, Mississippi, for City of Carthage, \nPump Station Rehabilitation & Lagoon Upgrades, CDBG Project Nos. 1138-23-140-PF-02 & \n1200-23-140-PF-01, Leake County, Mississippi, Project No. 57-23, until",
+  "BidID": 46495,
+  "BidNumber": "24-20260827081551 Carthage",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ConsHeavMainSew",
+      "CategoryNumber": "91381"
+    }
+  ],
+  "ObjectID": "3170036576",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036576.PDF?ATTCGET&CLID=02000600000A1FE1ACA856F03C8F52E8&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "CONSTRUCTION",
+  "ProcurementCategoryID": "03",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1790658000000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

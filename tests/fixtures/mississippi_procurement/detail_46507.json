@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "",
+  "AdvertiseDate": "/Date(1789707600000)/",
+  "AdvertiseTime": "00:00:00",
+  "Agency": "UNIVERSITY OF SOUTHERN MISSISSIPPI",
+  "AgencyAddress": "COLLEGE DRHATTIESBURGMS39406",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67887,
+      "Description": "USM RFP 27-16 Banking Services",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/USM%20RFP%2027%2D16%20BANKING%20SERVICES.PDF?PHIOGET&KPID=02000600000A1FE1ACDC5F3903F1351B&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Sealed proposals will be received in the Procurement and Contract Services Office, The University of Southern Mississippi, 118 College Drive #5003, Bond Hall, Room 214, Hattiesburg, Mississippi, until Thursday, October 8, 2026, at 2:00 p.m., for the purch",
+  "BidID": 46507,
+  "BidNumber": "9280-27-R-IFBD-00013",
+  "BidStatus": "Open",
+  "BidType": "Invitation for Bid",
+  "BuyerEmail": "",
+  "BuyerFax": "",
+  "BuyerName": "Deidre Edwards",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv NonBidMiscFeeBa",
+      "CategoryNumber": "96335"
+    }
+  ],
+  "ObjectID": "3160008278",
+  "OpeningDate": "/Date(1791435600000)/",
+  "OpeningTime": "14:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3160008278.PDF?ATTCGET&CLID=0200060000111FD1ACDC69FB41D7144D&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "PERSONNEL SERVICES NON-IT",
+  "ProcurementCategoryID": "01",
+  "SubProcurementCategoryDescription": "PERSONNEL SERVICE - NON-TECHNOLOGY",
+  "SubProcurementCategoryID": "05",
+  "SubmissionDate": "/Date(1791435600000)/",
+  "SubmissionTime": "14:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

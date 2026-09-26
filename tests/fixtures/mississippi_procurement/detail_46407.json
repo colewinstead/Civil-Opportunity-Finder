@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "",
+  "AdvertiseDate": "/Date(1788843600000)/",
+  "AdvertiseTime": "00:00:00",
+  "Agency": "MS DEPT OF ARCHIVES AND HISTORY",
+  "AgencyAddress": "JACKSONMS39205571",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67700,
+      "Description": "Advertisement for Bid",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/ADVERTISEMENT%20FOR%20BID%5FCRIGLER.PDF?PHIOGET&KPID=0200060000111FD1A9DC993F803E4436&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Plans are underway for the construction of the new Margaret Ann Crigler Park in\nJackson, Mississippi. The new park will be located on a site bounded by Yazoo Street to the\nsouth, State Street to the west, Mississippi Street to the north, and North Street",
+  "BidID": 46407,
+  "BidNumber": "1475-27-R-IFBD-00001",
+  "BidStatus": "Open",
+  "BidType": "Invitation for Bid",
+  "BuyerEmail": "DPAUL@MDAH.MS.GOV",
+  "BuyerFax": "",
+  "BuyerName": "Diptendu Paul",
+  "BuyerPhone": "6625341986",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Real Estate",
+      "CategoryNumber": "57863"
+    }
+  ],
+  "ObjectID": "3160008224",
+  "OpeningDate": "/Date(1791349200000)/",
+  "OpeningTime": "14:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3160008224.PDF?ATTCGET&CLID=0200060000111FD1A9DD28C6872FC442&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "CONSTRUCTION",
+  "ProcurementCategoryID": "03",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1791349200000)/",
+  "SubmissionTime": "14:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "",
+  "AdvertiseDate": "/Date(1789016400000)/",
+  "AdvertiseTime": "00:00:00",
+  "Agency": "MS DEPT OF PUBLIC SAFETY",
+  "AgencyAddress": "209 Allen Stuart DrivePearlMS39208",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67794,
+      "Description": "Invitation for Bid Capitol Police Uniforms 3160008204",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/INVITATION%20FOR%20BID%20CAPITOL%20POLICE%20UNIFORMS%203160008204.PDF?PHIOGET&KPID=02000600000A1FE1ABA3CD935AA66E31&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Bid Soliciation for the purchasing of Ms Highway Patrol Men and Women Long and Short Sleeve Shirts, Men and Women trousers.",
+  "BidID": 46454,
+  "BidNumber": "1711-27-R-IFBD-00003-V01",
+  "BidStatus": "Open",
+  "BidType": "Invitation for Bid",
+  "BuyerEmail": "SONYA.WILLIAMS@DPS.MS.GOV",
+  "BuyerFax": "",
+  "BuyerName": "SONYA WILLIAMS",
+  "BuyerPhone": "6019871204",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "ClothingShirtsDressC",
+      "CategoryNumber": "20070"
+    }
+  ],
+  "ObjectID": "3160008204",
+  "OpeningDate": "/Date(1790830800000)/",
+  "OpeningTime": "10:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3160008204%5FV2.PDF?ATTCGET&CLID=0200060000111FD1ABA4D12755610C95&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "COMMODITIES",
+  "ProcurementCategoryID": "04",
+  "SubProcurementCategoryDescription": "SUPPLIES - NON-TECHNOLOGY",
+  "SubProcurementCategoryID": "03",
+  "SubmissionDate": "/Date(1790830800000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": "V01"
+}

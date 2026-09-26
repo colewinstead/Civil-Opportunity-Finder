@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Renee Murray, E-Government Program Lead \nMS Dept. of Information Technology Services \n601-432-8146 \nRenee.Murray@its.ms.gov",
+  "AdvertiseDate": "/Date(1724130000000)/",
+  "AdvertiseTime": "08:00:00",
+  "Agency": "",
+  "AgencyAddress": "",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 54690,
+      "Description": "General RFP No. 3850 URL",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/RFP%20URL.PDF?PHIOGET&KPID=174D924F2D821EEF96E6BAEC6A9E0FCD&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "General RFP 3850: to enhance the existing vendor pool to be used in the Managed Service Provider process for the acquisition of Information Systems Consulting Services for the State of Mississippi.  Proposals accepted until September 30, 2026.",
+  "BidID": 38017,
+  "BidNumber": "1601-25-R-RFPR-00005",
+  "BidStatus": "Open",
+  "BidType": "Request for Proposal",
+  "BuyerEmail": "VALERIE.LUCKETT@ITS.MS.GOV",
+  "BuyerFax": "",
+  "BuyerName": "Valerie Luckett",
+  "BuyerPhone": "6014328218",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ConsultIT",
+      "CategoryNumber": "91871"
+    }
+  ],
+  "ObjectID": "3120002960",
+  "OpeningDate": "/Date(1790744400000)/",
+  "OpeningTime": "15:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3120002960.PDF?ATTCGET&CLID=174D924F2D821EDF97CB2183A3454867&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "INFORMATION TECHNOLOGY (IT)",
+  "ProcurementCategoryID": "02",
+  "SubProcurementCategoryDescription": "PERSONNEL SERVICE - TECHNOLOGY",
+  "SubProcurementCategoryID": "06",
+  "SubmissionDate": "/Date(1790744400000)/",
+  "SubmissionTime": "15:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

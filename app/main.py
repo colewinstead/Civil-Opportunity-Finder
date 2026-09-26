@@ -12,12 +12,13 @@ from app.config import ROOT, Settings
 from app.database import Base, create_database
 from app.logging_config import configure_logging
 from app.routes import api, web
-from app.scrapers.registry import sync_sources
+from app.scrapers.registry import SCRAPERS, sync_sources
 from app.services.collection import CollectionService
 
 
-def create_app(settings: Settings | None = None) -> FastAPI:
+def create_app(settings: Settings | None = None, registry=None) -> FastAPI:
     settings = settings or Settings()
+    registry = SCRAPERS if registry is None else registry
 
     @asynccontextmanager
     async def lifespan(application: FastAPI):
@@ -25,8 +26,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         engine, sessions = create_database(settings.database_url)
         Base.metadata.create_all(engine)
         with sessions.begin() as session:
-            sync_sources(session)
-        collection = CollectionService(sessions, settings)
+            sync_sources(session, registry)
+        collection = CollectionService(sessions, settings, registry)
         collection.recover_interrupted()
         application.state.settings = settings
         application.state.engine = engine

@@ -5,8 +5,12 @@ from sqlalchemy.orm import Session
 from app.models.source import Source
 from app.scrapers.base import BaseScraper
 from app.scrapers.fixture import FixtureScraper
+from app.scrapers.mississippi_procurement import MississippiProcurementScraper
 
-SCRAPERS: dict[str, type[BaseScraper]] = {FixtureScraper.slug: FixtureScraper}
+SCRAPERS: dict[str, type[BaseScraper]] = {
+    FixtureScraper.slug: FixtureScraper,
+    MississippiProcurementScraper.slug: MississippiProcurementScraper,
+}
 
 
 def sync_sources(session: Session, registry: dict[str, type[BaseScraper]] = SCRAPERS) -> None:

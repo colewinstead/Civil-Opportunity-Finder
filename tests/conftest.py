@@ -1,11 +1,21 @@
 from datetime import date
 
 import pytest
+import httpx
 from fastapi.testclient import TestClient
 
 from app.config import Settings
 from app.main import create_app
+from app.scrapers.fixture import FixtureScraper
 from app.services.normalizer import normalize_record
+
+
+@pytest.fixture(autouse=True)
+def forbid_live_http(monkeypatch):
+    """Any accidental live HTTP in the suite fails instead of reaching a site."""
+    def blocked(*args, **kwargs):
+        raise AssertionError("Tests must use saved fixtures or a mocked HTTP transport")
+    monkeypatch.setattr(httpx.HTTPTransport, "handle_request", blocked)
 
 
 @pytest.fixture
@@ -15,7 +25,7 @@ def settings(tmp_path):
 
 @pytest.fixture
 def application(settings):
-    return create_app(settings)
+    return create_app(settings, registry={FixtureScraper.slug: FixtureScraper})
 
 
 @pytest.fixture

@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact Thomas Hamby, thamby@gtpdd.com",
+  "AdvertiseDate": "/Date(1790139600000)/",
+  "AdvertiseTime": "17:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67980,
+      "Description": "Advertisement for ARC Construction Bids 2026 Cinco Part 1 V4.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/50%2D20260904101615%20LCBS.PDF?PHIOGET&KPID=0200060000111FD1ADF0EA6FA285BA3F&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Sealed bids will be received by the Lowndes County Board of Supervisors, located at 505 2nd Avenue \nNorth, Columbus, MS 39701, until 10:00 am local time on Friday, October 9, 2026, for supplying all \nlabor and materials (as specified) necessary for constr",
+  "BidID": 46571,
+  "BidNumber": "50-20260904101615 LCBS",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv PubWrkTankInst",
+      "CategoryNumber": "96878"
+    }
+  ],
+  "ObjectID": "3170036633",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036633.PDF?ATTCGET&CLID=0200060000111FD1ADF0FA29DF4C9A3F&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "CONSTRUCTION",
+  "ProcurementCategoryID": "03",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1791522000000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

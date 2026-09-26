@@ -103,3 +103,64 @@ def test_timeout_failure_is_meaningful(settings):
             http.get("https://example.invalid/bids")
     finally:
         http.close()
+
+
+def test_form_post_retries_preserves_body_and_checks_robots(settings, monkeypatch):
+    calls, sleeps = [], []
+    monkeypatch.setattr("app.scrapers.base.time.sleep", sleeps.append)
+    settings = settings.model_copy(update={"scraper_retries": 1})
+    def handle(request):
+        calls.append(request)
+        if request.url.path == "/robots.txt":
+            return httpx.Response(200, text="User-agent: *\nAllow: /")
+        if len(calls) == 2:
+            return httpx.Response(503)
+        return httpx.Response(200, text='{"aaData":[]}')
+    http = PoliteHTTPClient(settings, httpx.MockTransport(handle))
+    try:
+        assert http.post_form("https://example.invalid/search", {"offset": "100"}) == '{"aaData":[]}'
+        assert [request.method for request in calls] == ["GET", "POST", "POST"]
+        assert calls[1].content == calls[2].content == b"offset=100"
+        assert sleeps == [1]
+    finally:
+        http.close()
+
+
+@pytest.mark.parametrize("status,location,allowed", [
+    (307, "/next", True), (308, "/next", True), (303, "/next", True),
+    (302, "/next", False), (307, "https://other.invalid/next", False),
+])
+def test_form_redirects_are_safe(settings, status, location, allowed):
+    calls = []
+    def handle(request):
+        calls.append(request)
+        if request.url.path == "/robots.txt":
+            return httpx.Response(200, text="User-agent: *\nAllow: /")
+        if request.url.path == "/search":
+            return httpx.Response(status, headers={"location": location})
+        return httpx.Response(200, text="result")
+    http = PoliteHTTPClient(settings, httpx.MockTransport(handle))
+    try:
+        if allowed:
+            assert http.post_form("https://example.invalid/search", {"offset": "0"}) == "result"
+            assert calls[-1].method == ("GET" if status == 303 else "POST")
+        else:
+            with pytest.raises(ScraperError):
+                http.post_form("https://example.invalid/search", {"offset": "0"})
+            assert len(calls) == 2
+    finally:
+        http.close()
+
+
+def test_form_disallowed_by_robots_never_sent(settings):
+    calls = []
+    def handle(request):
+        calls.append(request)
+        return httpx.Response(200, text="User-agent: *\nDisallow: /search")
+    http = PoliteHTTPClient(settings, httpx.MockTransport(handle))
+    try:
+        with pytest.raises(ScraperError, match="disallows"):
+            http.post_form("https://example.invalid/search", {"offset": "0"})
+        assert len(calls) == 1 and calls[0].method == "GET"
+    finally:
+        http.close()

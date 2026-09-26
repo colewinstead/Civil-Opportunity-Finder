@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact Jamie McInnis, jamie.mcinnis@waggonereng.com",
+  "AdvertiseDate": "/Date(1790139600000)/",
+  "AdvertiseTime": "16:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67977,
+      "Description": "2_advertisement for bid October2026-September2027.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/364%2D20260903130100%20CMU.PDF?PHIOGET&KPID=0200060000111FD1ADF08C1863003A3E&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "NOTICE is hereby given that the Canton Municipal Utilities, (CMU), will receive written \nsealed bids until the hour of 10:00 o'clock a.m. local time, on October 6th, 2026 at the CMU \noffice, 127 W. Peace St., Canton, Mississippi 39046, for the furnishing",
+  "BidID": 46568,
+  "BidNumber": "364-20260903130100 CMU",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ConstHeavyUtil",
+      "CategoryNumber": "91356"
+    }
+  ],
+  "ObjectID": "3170036630",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036630.PDF?ATTCGET&CLID=02000600000A1FE1ADF0915E930A7A7B&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "COMMODITIES",
+  "ProcurementCategoryID": "04",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1791262800000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

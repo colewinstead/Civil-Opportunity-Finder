@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact Karla Allen, kla@williseng.net",
+  "AdvertiseDate": "/Date(1790139600000)/",
+  "AdvertiseTime": "14:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67968,
+      "Description": "ADVERTISEMENT.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/124%2D20260901155837%20NORTH%20CARROLLTON.PDF?PHIOGET&KPID=0200060000111FD1ADEF67DE332B3A39&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "sealed BIDS for SEWER IMPROVEMENTS (CDBG PROJECT NO. 1200-24-278-PF-01)        \nwill be received by theTown of North Carrollton (P.O. Box 305, North Carrollton, MS 38947) in the office of the Mayor in North Carrollton, MS until, OCTOBER 9, 2026 @ 10:00 AM",
+  "BidID": 46562,
+  "BidNumber": "124-20260901155837 North Carroll",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ConstHeavySewer",
+      "CategoryNumber": "91345"
+    }
+  ],
+  "ObjectID": "3170036625",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036625.PDF?ATTCGET&CLID=0200060000111FD1ADEF7082DA611A39&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "CONSTRUCTION",
+  "ProcurementCategoryID": "03",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1791522000000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

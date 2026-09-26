@@ -44,7 +44,7 @@
 <nav class="d-flex gap-2 justify-content-end mt-3" aria-label="Pagination">{% if page > 1 %}<a class="btn btn-outline-secondary btn-sm" href="{{ request.url.include_query_params(page=page-1) }}">Previous</a>{% endif %}{% if page < pages %}<a class="btn btn-outline-secondary btn-sm" href="{{ request.url.include_query_params(page=page+1) }}">Next</a>{% endif %}</nav>
 {% else %}
 <div class="panel empty-state"><span class="empty-mark" aria-hidden="true">⌕</span><h2 class="h4">{{ 'Your workspace is ready.' if all_count == 0 else 'No matching opportunities.' }}</h2>
-<p class="text-body-secondary">{% if all_count == 0 %}Phase 1 has no live sources. Load clearly labeled synthetic listings to explore the workflow.{% else %}Try fewer filters or a broader keyword search.{% endif %}</p>
-{% if all_count == 0 %}<code>.\.venv\Scripts\python.exe -m scripts.load_demo</code>{% else %}<a href="/" class="btn btn-outline-primary">Clear filters</a>{% endif %}</div>
+<p class="text-body-secondary">{% if all_count == 0 %}Run Mississippi procurement collection to discover live engineering and civil infrastructure opportunities.{% else %}Try fewer filters or a broader keyword search.{% endif %}</p>
+{% if all_count == 0 %}<a href="/sources" class="btn btn-outline-primary">Open collection</a>{% else %}<a href="/" class="btn btn-outline-primary">Clear filters</a>{% endif %}</div>
 {% endif %}
 {% endblock %}

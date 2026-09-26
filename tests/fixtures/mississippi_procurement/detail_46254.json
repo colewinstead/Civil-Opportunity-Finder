@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "",
+  "AdvertiseDate": "/Date(1787115600000)/",
+  "AdvertiseTime": "00:00:00",
+  "Agency": "MS VETERANS AFFAIRS",
+  "AgencyAddress": "E WOODROW WILSON AVEJACKSONMS39216",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67365,
+      "Description": "RFP Housekeeping Services",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/RFP%20HOUSEKEEPING%20OXFORD%202026.PDF?PHIOGET&KPID=02000600000A1FD1A5A04C003D94F064&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Housekeeping Services for the Oxford Nursing Home",
+  "BidID": 46254,
+  "BidNumber": "1731-27-R-PREQ-00004",
+  "BidStatus": "Open",
+  "BidType": "Procurement Request",
+  "BuyerEmail": "EWILLIAMS@MSVA.MS.GOV",
+  "BuyerFax": "",
+  "BuyerName": "Edward Williams",
+  "BuyerPhone": "6015764862",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv MiscNo1FoodPrep",
+      "CategoryNumber": "96138"
+    }
+  ],
+  "ObjectID": "3200001531",
+  "OpeningDate": "/Date(1790571600000)/",
+  "OpeningTime": "15:00:00",
+  "PDFUrl": "",
+  "ProcurementCategoryDescription": "PERSONNEL SERVICES NON-IT",
+  "ProcurementCategoryID": "01",
+  "SubProcurementCategoryDescription": "PERSONNEL SERVICE - NON-TECHNOLOGY",
+  "SubProcurementCategoryID": "05",
+  "SubmissionDate": "/Date(1790571600000)/",
+  "SubmissionTime": "15:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

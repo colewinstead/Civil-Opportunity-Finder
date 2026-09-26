@@ -94,7 +94,8 @@ class CollectionService:
                 for field in ("records_discovered", "records_added", "records_updated"):
                     setattr(batch, field, sum(getattr(child, field) for child in children))
                 failures = [child for child in children if child.outcome != "SUCCEEDED"]
-                batch.outcome = "PARTIAL" if failures and len(failures) < len(children) else "FAILED" if failures else "SUCCEEDED"
+                successes = any(child.outcome in ("SUCCEEDED", "PARTIAL") for child in children)
+                batch.outcome = "PARTIAL" if failures and successes else "FAILED" if failures else "SUCCEEDED"
                 batch.errors = "\n".join(f"{child.source}: {child.errors}" for child in failures) or None
                 batch.finished_at = utcnow()
                 self._log_run(batch)
@@ -120,9 +121,13 @@ class CollectionService:
             session.add(CollectionRun(id=child_id, parent_id=parent_id, source=slug, started_at=started))
         logger.info("Scraper started", extra={"fields": {"source": slug, "run_id": child_id, "start_time": started}})
         discovered = 0
+        scraper = None
         try:
-            records = self.registry[slug](self.settings, http).run()
-            discovered = len(records)
+            scraper = self.registry[slug](self.settings, http)
+            records = scraper.run()
+            discovered = scraper.metrics.get("records_discovered", len(records))
+            if scraper.record_errors and not records:
+                raise RuntimeError("All candidate records failed: " + "; ".join(scraper.record_errors))
             # Data and successful counts commit atomically for this source.
             with self.sessions.begin() as session:
                 run = session.get(CollectionRun, child_id)
@@ -133,26 +138,29 @@ class CollectionService:
                         run.records_added += 1
                     else:
                         run.records_updated += 1
-                run.outcome = "SUCCEEDED"
+                run.outcome = "PARTIAL" if scraper.record_errors else "SUCCEEDED"
+                run.errors = "\n".join(scraper.record_errors) or None
                 run.finished_at = utcnow()
                 source = session.scalar(select(Source).where(Source.slug == slug))
-                source.last_successful = run.finished_at
-            self._log_run(run)
+                if run.outcome == "SUCCEEDED":
+                    source.last_successful = run.finished_at
+            self._log_run(run, scraper.metrics)
         except Exception as exc:
             logger.exception("Scraper failed", extra={"fields": {"source": slug, "run_id": child_id}})
             with self.sessions.begin() as session:
                 run = session.get(CollectionRun, child_id)
                 run.outcome = "FAILED"
-                run.records_discovered = discovered
+                run.records_discovered = scraper.metrics.get("records_discovered", discovered) if scraper else discovered
                 run.records_added = 0
                 run.records_updated = 0
                 run.finished_at = utcnow()
                 run.errors = f"{type(exc).__name__}: {exc}"
-            self._log_run(run)
+            self._log_run(run, scraper.metrics if scraper else None)
 
     @staticmethod
-    def _log_run(run: CollectionRun) -> None:
+    def _log_run(run: CollectionRun, metrics: dict | None = None) -> None:
         logger.info("Collection finished", extra={"fields": {
+            **(metrics or {}),
             "source": run.source, "run_id": run.id, "start_time": run.started_at, "finish_time": run.finished_at,
             "outcome": run.outcome, "records_discovered": run.records_discovered,
             "records_added": run.records_added, "records_updated": run.records_updated, "errors": run.errors,

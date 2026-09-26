@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact phylis benson, pbenson@gtpdd.com",
+  "AdvertiseDate": "/Date(1790139600000)/",
+  "AdvertiseTime": "14:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67961,
+      "Description": "IGNITE Engineering Services RFQ Notice.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/171%2D20260831151620%20CCEDD.PDF?PHIOGET&KPID=0200060000111FD1ADEDED34FE5ABA30&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "The Choctaw County Economic Development District requests statements of qualifications from qualified firms or individuals \nto provide engineering services for work related to the development of an Industrial Site Suitability Study utilizing federal and l",
+  "BidID": 46558,
+  "BidNumber": "171-20260831151620 CCEDD",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ProfesEngCivilE",
+      "CategoryNumber": "92517"
+    }
+  ],
+  "ObjectID": "3170036622",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036622.PDF?ATTCGET&CLID=0200060000111FD1ADEDF2C3756EDA30&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "PERSONNEL SERVICES NON-IT",
+  "ProcurementCategoryID": "01",
+  "SubProcurementCategoryDescription": "PERSONNEL SERVICE - NON-TECHNOLOGY",
+  "SubProcurementCategoryID": "05",
+  "SubmissionDate": "/Date(1791176400000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}

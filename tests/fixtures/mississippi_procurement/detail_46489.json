@@ -1,0 +1,55 @@
+{
+  "ExtensionData": {},
+  "AdditionalInfo": "Any questions contact Tonga Vinson, tonga.vinson@neel-schaffer.com",
+  "AdvertiseDate": "/Date(1789448400000)/",
+  "AdvertiseTime": "12:00:00",
+  "Agency": "MPTAP",
+  "AgencyAddress": "JACKSONMS39201849",
+  "AgencyAddress2": null,
+  "AgencyCity": null,
+  "AgencyNumber": null,
+  "AgencyState": null,
+  "AgencyZip": null,
+  "Attachments": [
+    {
+      "ExtensionData": {},
+      "AttachmentID": 67854,
+      "Description": "ADVERTISEMENT FOR BIDS_NRCS Group 12.pdf",
+      "Url": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/133%2D20260826121831%20WCBS.PDF?PHIOGET&KPID=0200060000111FD1ACA4A1973E65D1AA&KPCLASS=BBP_P_DOC&SAP-CLIENT=100"
+    }
+  ],
+  "AwardAmount": null,
+  "AwardDate": null,
+  "AwdVendor": [],
+  "BidDescription": "Notice is hereby given that the Warren County Board of Supervisors will receive sealed bids from qualified bidders for the project identified as the \nWarren County NRCS EWP Erosion Control Project No. 75(352)  GROUP 12 (5 Sites).  The project includes dr",
+  "BidID": 46489,
+  "BidNumber": "133-20260826121831 WCBS",
+  "BidStatus": "Open",
+  "BidType": "MDA - RFx",
+  "BuyerEmail": "PROCUREMENTBID@MISSISSIPPI.ORG",
+  "BuyerFax": "",
+  "BuyerName": "BID BANK",
+  "BuyerPhone": "",
+  "ContractStatus": null,
+  "FundingSource": null,
+  "Items": [
+    {
+      "ExtensionData": {},
+      "CategoryDescription": "Serv ConsHeavMainHwy",
+      "CategoryNumber": "91371"
+    }
+  ],
+  "ObjectID": "3170036574",
+  "OpeningDate": null,
+  "OpeningTime": "00:00:00",
+  "PDFUrl": "https://SRM.MAGIC.MS.GOV:443/SAP/EBP/DOCSERVER/SYN%5FBID%5FFORM%5F3170036574.PDF?ATTCGET&CLID=0200060000111FD1ACA4AEB5434751AE&SAP-CLIENT=100",
+  "ProcurementCategoryDescription": "CONSTRUCTION",
+  "ProcurementCategoryID": "03",
+  "SubProcurementCategoryDescription": "CONSTRUCTION - SERVICES",
+  "SubProcurementCategoryID": "08",
+  "SubmissionDate": "/Date(1790744400000)/",
+  "SubmissionTime": "10:00:00",
+  "Vendor": null,
+  "VendorNumber": null,
+  "VerNumber": ""
+}
