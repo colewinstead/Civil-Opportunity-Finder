@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ opportunity.title }} · Civil Opportunity Finder{% endblock %}
+{% block content %}
+<a href="/" class="back-link">← All opportunities</a>
+<div class="row g-4 mt-1">
+<div class="col-lg-8">
+  <div class="eyebrow">{{ opportunity.category|category_label }} · {{ opportunity.source_name }}</div>
+  <h1 class="detail-title">{{ opportunity.title }}</h1>
+  <p class="text-body-secondary">{{ opportunity.agency or 'Agency unavailable' }}{% if opportunity.city %} · {{ opportunity.city }}{% endif %}{% if opportunity.state %}, {{ opportunity.state }}{% endif %}</p>
+  <section class="panel mb-4"><h2 class="h5">Project description</h2><p class="preserve-lines mb-0">{{ opportunity.description or 'No description supplied by this source.' }}</p></section>
+  <section class="panel mb-4"><h2 class="h5 mb-3">Solicitation information</h2><dl class="detail-grid mb-0">
+    {% for label, value in [('Solicitation number',opportunity.solicitation_number),('Procurement type',opportunity.procurement_type),('Primary category',opportunity.category),('Additional categories',opportunity.subcategories|join(', ')),('County',opportunity.county),('City',opportunity.city),('State',opportunity.state),('Posted date',opportunity.posted_date),('Due date',opportunity.due_date),('Estimated value',opportunity.estimated_value),('Professional services',opportunity.professional_services),('Engineering required',opportunity.engineering_required),('Contact name',opportunity.contact_name),('Contact email',opportunity.contact_email),('Contact phone',opportunity.contact_phone),('Source',opportunity.source_name),('Source URL',opportunity.source_url),('Original URL',opportunity.opportunity_url),('First discovered (UTC)',opportunity.first_seen),('Last seen (UTC)',opportunity.last_seen),('Content hash',opportunity.content_hash)] %}
+    <dt>{{ label }}</dt><dd>{{ 'Not supplied' if value is none or value == '' else ('Yes' if value is sameas true else 'No' if value is sameas false else value) }}</dd>
+    {% endfor %}
+  </dl></section>
+  <details class="panel"><summary>Raw source text</summary><pre class="raw-text mt-3 mb-0">{{ opportunity.raw_text or 'No raw text available.' }}</pre></details>
+</div>
+<aside class="col-lg-4"><div class="panel pursuit-panel">
+  <div class="eyebrow">INTERNAL RELEVANCE</div><div class="detail-score">{{ opportunity.match_score }}<small>/100</small></div>
+  <p class="small text-body-secondary">Keyword-based fit for a small civil engineering firm. This is not a probability or a qualification assessment.</p>
+  {% if opportunity.due_date and opportunity.due_date < today %}<p class="deadline expired">Deadline passed · review the original listing.</p>{% elif opportunity.due_date and opportunity.due_date <= soon %}<p class="deadline">Due soon · {{ opportunity.due_date }}</p>{% endif %}
+  {% if opportunity.opportunity_url %}<a class="btn btn-primary w-100 mb-4" href="{{ opportunity.opportunity_url }}" target="_blank" rel="noopener noreferrer">Open original solicitation ↗</a>{% endif %}
+  <h2 class="h6">Pursuit status</h2><p><span class="status-tag">{{ opportunity.status.replace('_',' ').title() }}</span></p>
+  <form action="/opportunities/{{ opportunity.id }}/status" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <div class="d-grid gap-2 mb-3"><button class="btn btn-outline-primary" name="status" value="INTERESTED">Mark interested</button><button class="btn btn-outline-secondary" name="status" value="NOT_INTERESTED">Mark not interested</button><button class="btn btn-outline-secondary" name="status" value="ARCHIVED">Archive</button></div>
+  </form>
+  <form action="/opportunities/{{ opportunity.id }}/status" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label for="status" class="form-label small">Set any status</label><div class="input-group"><select class="form-select" id="status" name="status">{% for status in statuses %}<option value="{{ status.value }}" {% if opportunity.status == status %}selected{% endif %}>{{ status.value.replace('_',' ').title() }}</option>{% endfor %}</select><button class="btn btn-outline-primary" type="submit">Save</button></div></form>
+</div></aside></div>
+{% endblock %}

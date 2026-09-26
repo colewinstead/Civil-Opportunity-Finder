@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="eyebrow">YOUR OPPORTUNITY WORKSPACE</div>
+<div class="d-flex justify-content-between flex-wrap gap-3 align-items-end mb-4">
+  <div><h1>Find your next civil project.</h1><p class="text-body-secondary mb-0">Review solicitations, prioritize fit, and keep your pursuits organized.</p></div>
+  <a class="btn btn-outline-primary" href="/sources">Manage collection</a>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-12 col-md-4"><div class="metric"><span>Discovered opportunities</span><strong>{{ all_count }}</strong></div></div>
+  <div class="col-6 col-md-4"><div class="metric"><span>Marked interested</span><strong>{{ interested_count }}</strong></div></div>
+  <div class="col-6 col-md-4"><div class="metric"><span>Due within {{ request.app.state.settings.due_soon_days }} days</span><strong>{{ due_count }}</strong></div></div>
+</div>
+<section class="panel mb-4" aria-label="Search and filters">
+<form action="/" method="get">
+  <div class="row g-3">
+    <div class="col-12 col-lg-6"><label class="form-label" for="q">Keyword search</label><input class="form-control" type="search" id="q" name="q" value="{{ filters.q or '' }}" placeholder="Project, agency, discipline or solicitation number"></div>
+    <div class="col-6 col-lg-3"><label class="form-label" for="category">Category</label><select class="form-select" name="category" id="category"><option value="">All categories</option>{% for value in categories %}<option value="{{ value.value }}" {% if filters.category == value %}selected{% endif %}>{{ value.value|category_label }}</option>{% endfor %}</select></div>
+    <div class="col-6 col-lg-3"><label class="form-label" for="status">Status</label><select class="form-select" name="status" id="status"><option value="">All statuses</option>{% for value in statuses %}<option value="{{ value.value }}" {% if filters.status == value %}selected{% endif %}>{{ value.value.replace('_', ' ').title() }}</option>{% endfor %}</select></div>
+    {% for key, label, plural in [('agency','Agency','agencies'), ('county','County','counties'), ('city','City','cities'), ('source','Source','sources')] %}
+    <div class="col-6 col-lg-3"><label class="form-label" for="{{ key }}">{{ label }}</label><select class="form-select" name="{{ key }}" id="{{ key }}"><option value="">All {{ plural }}</option>{% for value in options['source_name' if key == 'source' else key] %}<option value="{{ value }}" {% if filters[key] == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></div>
+    {% endfor %}
+    <div class="col-6 col-lg-2"><label class="form-label" for="min_score">Minimum score</label><input type="number" class="form-control" min="0" max="100" name="min_score" id="min_score" value="{{ filters.min_score }}"></div>
+    <div class="col-6 col-lg-2"><label class="form-label" for="due_from">Due from</label><input type="date" class="form-control" name="due_from" id="due_from" value="{{ filters.due_from or '' }}"></div>
+    <div class="col-6 col-lg-2"><label class="form-label" for="due_to">Due through</label><input type="date" class="form-control" name="due_to" id="due_to" value="{{ filters.due_to or '' }}"></div>
+    <div class="col-6 col-lg-3"><label class="form-label" for="sort">Sort by</label><select class="form-select" name="sort" id="sort">{% for value, label in [('match_score','Highest match score'), ('due_date','Nearest due date'), ('posted_date','Latest posted'), ('newest','Newest discovered')] %}<option value="{{ value }}" {% if filters.sort == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></div>
+    <div class="col-12 col-lg-3 d-flex align-items-end gap-2"><button class="btn btn-primary flex-grow-1" type="submit">Apply filters</button><a class="btn btn-outline-secondary" href="/">Reset</a></div>
+  </div>
+</form>
+</section>
+<div class="d-flex align-items-center justify-content-between mb-3"><h2 class="h5 mb-0">Opportunities <span class="text-body-secondary">({{ total }})</span></h2><span class="text-body-secondary small">Page {{ page }} of {{ pages }}</span></div>
+{% if items %}
+<div class="panel table-panel"><div class="table-responsive"><table class="table align-middle mb-0">
+  <thead><tr><th>Fit</th><th>Opportunity / agency</th><th>Category</th><th>Location</th><th>Posted</th><th>Due</th><th>Source</th><th>Status</th></tr></thead>
+  <tbody>{% for item in items %}<tr>
+    <td><span class="score">{{ item.match_score }}</span></td>
+    <td class="title-cell"><a class="opportunity-title" href="/opportunities/{{ item.id }}">{{ item.title }}</a><div class="small text-body-secondary mt-1">{{ item.agency or 'Agency unavailable' }}</div></td>
+    <td><span class="category-tag">{{ item.category|category_label }}</span></td>
+    <td>{{ item.city or '—' }}{% if item.county %}<div class="small text-body-secondary">{{ item.county }} County</div>{% endif %}</td>
+    <td class="date-cell">{{ item.posted_date or '—' }}</td>
+    <td class="date-cell">{{ item.due_date or '—' }}{% if item.due_date and item.due_date < today %}<div class="deadline expired">Deadline passed</div>{% elif item.due_date and item.due_date <= soon %}<div class="deadline">Due soon</div>{% endif %}</td>
+    <td class="small">{{ item.source_name }}</td><td><span class="status-tag">{{ item.status.replace('_',' ').title() }}</span></td>
+  </tr>{% endfor %}</tbody>
+</table></div></div>
+<nav class="d-flex gap-2 justify-content-end mt-3" aria-label="Pagination">{% if page > 1 %}<a class="btn btn-outline-secondary btn-sm" href="{{ request.url.include_query_params(page=page-1) }}">Previous</a>{% endif %}{% if page < pages %}<a class="btn btn-outline-secondary btn-sm" href="{{ request.url.include_query_params(page=page+1) }}">Next</a>{% endif %}</nav>
+{% else %}
+<div class="panel empty-state"><span class="empty-mark" aria-hidden="true">⌕</span><h2 class="h4">{{ 'Your workspace is ready.' if all_count == 0 else 'No matching opportunities.' }}</h2>
+<p class="text-body-secondary">{% if all_count == 0 %}Phase 1 has no live sources. Load clearly labeled synthetic listings to explore the workflow.{% else %}Try fewer filters or a broader keyword search.{% endif %}</p>
+{% if all_count == 0 %}<code>.\.venv\Scripts\python.exe -m scripts.load_demo</code>{% else %}<a href="/" class="btn btn-outline-primary">Clear filters</a>{% endif %}</div>
+{% endif %}
+{% endblock %}

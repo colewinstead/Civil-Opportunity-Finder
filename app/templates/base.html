@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>{% block title %}Mississippi Civil Opportunity Finder{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container-fluid page-width d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">MS</span><span><strong>Civil Opportunity Finder</strong><small>MISSISSIPPI · BUSINESS DEVELOPMENT</small></span></a>
+    <nav class="d-flex align-items-center gap-3" aria-label="Main navigation">
+      <a href="/" class="nav-link">Opportunities</a><a href="/sources" class="nav-link">Sources & runs</a>
+      <button id="theme-toggle" class="btn btn-sm btn-outline-secondary" type="button">Light mode</button>
+    </nav>
+  </div>
+</header>
+<main class="container-fluid page-width py-4">{% block content %}{% endblock %}</main>
+<footer class="container-fluid page-width py-4 footer-note">Phase 1 · Local workspace · Scores indicate relevance, not win probability. No live source coverage yet.</footer>
+</body>
+</html>

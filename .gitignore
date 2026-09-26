@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/*
+!data/.gitkeep
+*.db
+*.db-shm
+*.db-wal
+*.log
+output/
+.playwright-cli/
